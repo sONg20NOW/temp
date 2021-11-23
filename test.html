@@ -38,9 +38,10 @@
       request.onload = function () {
         let pros_json_text = request.response;
         let pros_json = JSON.parse(pros_json_text);
-        let p1_des = document.createElement("p");
-        let text = pros_json["1"]["description"];
+        let text = pros_json["2"]["description"];
 
+        let p1_des = document.createElement("p");
+        p1_des.textContent = text;
         div.appendChild(p1_des);
       };
     </script>
