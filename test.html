@@ -27,17 +27,17 @@
       let div = document.querySelector("div");
 
       let requestURL =
-        "https://raw.githubusercontent.com/sONg20NOW/temp/main/problems.json";
+        "https://raw.githubusercontent.com/sONg20NOW/temp/main/problems.txt";
 
       let request = new XMLHttpRequest();
 
       request.open("GET", requestURL);
-      request.responseType = "json";
+      request.responseType = "text";
       request.send();
 
       request.onload = function () {
-        let pros_json = request.response;
-        //let pros_json = JSON.parse(pros_json_text);
+        let pros_json_text = request.response;
+        let pros_json = JSON.parse(pros_json_text);
         let text = pros_json["2"]["description"];
 
         let p1_des = document.createElement("p");
