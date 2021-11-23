@@ -1,10 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>test for data sets</title>
-  <meta charset="utf-8" />
-</head>
-<body>
+  <head>
+    <title>test for data sets</title>
+    <meta charset="utf-8" />
+  </head>
+  <body>
+    <div></div>
 
-</body>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script>
+      let requestURL =
+        "https://raw.githubusercontent.com/sONg20NOW/temp/f2a5c6922f5eb7d7361629d59965c41bcba606f8/problems.json";
+      let request = new XMLHttpRequest();
+      request.open("GET", requestURL);
+
+      request.responseType = "json";
+      request.send();
+
+      request.onload = function () {
+        let pros_json = request.response;
+        let pros = JSON.parse(pros_json);
+      };
+
+      let p1_des = document.createElement("p");
+      p1_des.textContent = pros["1"]["description"];
+
+      let div = document.querySelector("div");
+      div.appendChild(p1_des);
+    </script>
+  </body>
 </html>
