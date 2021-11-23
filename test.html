@@ -38,7 +38,7 @@
       request.onload = function () {
         let prosJsonText = request.response;
         let prosJson = JSON.parse(prosJsonText);
-        let text = prosJson["1"]["description"];
+        let text = prosJson["2"]["description"];
 
         let pro1 = document.createElement("p");
         pro1.textContent = text;
