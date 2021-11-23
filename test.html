@@ -30,7 +30,8 @@
         let pros_json_text = request.response;
         let pros_json = JSON.parse(pros_json_text);
         let p1_des = document.createElement("p");
-        p1_des.textContent = pros_json["1"]["description"];
+        let text = pros_json["1"]["description"];
+        test = text.replace('\\', '\');
 
         div.appendChild(p1_des);
       };
