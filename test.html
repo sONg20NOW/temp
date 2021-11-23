@@ -36,13 +36,13 @@
       request.send();
 
       request.onload = function () {
-        let pros_json_text = request.response;
-        let pros_json = JSON.parse(pros_json_text);
-        let text = pros_json["2"]["description"];
+        let prosJsonText = request.response;
+        let prosJson = JSON.parse(prosJsonText);
+        let text = prosJson["1"]["description"];
 
-        let p1_des = document.createElement("p");
-        p1_des.textContent = text;
-        div.appendChild(p1_des);
+        let pro1 = document.createElement("p");
+        pro1.textContent = text;
+        div.appendChild(pro1);
       };
     </script>
   </body>
