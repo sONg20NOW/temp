@@ -8,17 +8,26 @@
     <div></div>
 
     <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+        MathJax.Hub.Config({
+          extensions: ["TeX/cancel.js"], // this allows use of the "cancel" macro
+          tex2jax: {
+            inlineMath: [ ['$','$'] ],
+            displayMath: [ ['$$','$$'] ],
+            processEscapes: true         // this allows me to use a literal dollar sign, \$, outside of math mode
+          }
       });
     </script>
-    <script src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"
+    ></script>
 
     <script>
       let div = document.querySelector("div");
 
       let requestURL =
-        "https://raw.githubusercontent.com/sONg20NOW/temp/main/problems.json";
+        "https://raw.githubusercontent.com/sONg20NOW/temp/main/problems.txt";
 
       let request = new XMLHttpRequest();
 
@@ -31,7 +40,6 @@
         let pros_json = JSON.parse(pros_json_text);
         let p1_des = document.createElement("p");
         let text = pros_json["1"]["description"];
-        test = text.replace('\\', '\');
 
         div.appendChild(p1_des);
       };
